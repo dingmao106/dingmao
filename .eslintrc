@@ -1,0 +1,16 @@
+{
+  "parser": "babel-eslint",
+  "extends": "@17media/eslint-config-17media",
+  "env": {
+    "browser": true,
+    "node": true,
+    "mocha": true,
+    "jest": true
+  },
+  "settings": {
+    "import/resolver": {
+      "webpack": {},
+      "babel-module": {}
+    }
+  }
+}
