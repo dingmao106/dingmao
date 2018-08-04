@@ -1,10 +1,10 @@
 import Header from '../components/Header';
 
-const Home = () => (
+const Contact = () => (
   <div>
     <Header />
-    <p>This is Home.</p>
+    <p>This is Contact.</p>
   </div>
 );
 
-export default Home;
+export default Contact;
