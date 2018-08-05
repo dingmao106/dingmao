@@ -32,7 +32,7 @@ export default class MyDocument extends Document {
             #__next {
               height: 100vh;
               min-height: 100vh;
-              background-image: url(/static/main-background.jpg);
+              background-image: url(${process.env.BACKEND_URL}/static/main-background.jpg);
               background-size: 100% 100%;
               background-repeat: no-repeat;
             }

@@ -1,4 +1,6 @@
-{
+const env = require('./env-config.js')
+
+module.exports = {
   "presets": [
     "next/babel",
   ],
@@ -11,7 +13,7 @@
         "preprocess": true
       }
     ],
-    "transform-define",
+    ["transform-define", env],
     "add-react-displayname"
   ]
 }
