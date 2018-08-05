@@ -1,10 +1,12 @@
+import React from 'react';
 import Header from '../components/Header';
+import Container from '../components/Container';
 
 const Home = () => (
-  <div>
+  <Container>
     <Header />
     <p>This is Home.</p>
-  </div>
+  </Container>
 );
 
 export default Home;

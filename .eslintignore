@@ -1,7 +1,3 @@
-public/
-build/
 node_modules/
-
-# old events
-cronjob/clanEvent.js
-cronjob/events/_archive_/
+out/
+.next/

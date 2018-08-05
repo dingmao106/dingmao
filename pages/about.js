@@ -1,10 +1,12 @@
+import React from 'react';
 import Header from '../components/Header';
+import Container from '../components/Container';
 
 const About = () => (
-  <div>
+  <Container>
     <Header />
     <p>This is About.</p>
-  </div>
+  </Container>
 );
 
 export default About;

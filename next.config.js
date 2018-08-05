@@ -1,3 +1,4 @@
+/* eslint-disable */
 module.exports = {
   // some configuration
   exportPathMap: function () { // /Next-React-Components
