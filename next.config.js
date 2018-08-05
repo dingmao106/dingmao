@@ -9,5 +9,5 @@ module.exports = {
       "/collection": { page: "/collection" },
     }
   },
-  assetPrefix: process.env.NODE_ENV === 'production' ? '/dingmao' : '',
+  assetPrefix: process.env.NODE_ENV === 'production' ? 'https://dingmao106.github.io/dingmao' : '',
 }
