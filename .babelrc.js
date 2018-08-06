@@ -10,7 +10,7 @@ module.exports = {
       {
         "ssr": true,
         "displayName": true,
-        "preprocess": true
+        "preprocess": false,
       }
     ],
     ["transform-define", env],

@@ -27,6 +27,7 @@ export default class MyDocument extends Document {
       <html>
         <Head>
           <title>My page</title>
+          <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet" />
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" />
           <style>{`
             #__next {
@@ -35,6 +36,11 @@ export default class MyDocument extends Document {
               background-image: url(${process.env.BACKEND_URL}/static/main-background.jpg);
               background-size: 100% 100%;
               background-repeat: no-repeat;
+            }
+            *,
+            *::before,
+            *::after {
+              box-sizing: border-box;
             }
           `}</style>
         </Head>
