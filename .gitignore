@@ -2,19 +2,12 @@
 .vscode
 .DS_Store
 *.log
-env.config.js
-!/__mocks__/env.config.js
 package-lock.json
 
 node_modules
 
-/configs17repos
 /coverage
 /public
 /tmp
-/tmpFiles
-/uploadFiles
-/sta-demo-bundles
+/out
 
-/cronjob/events/201801-jp-my-city/cityDailyWinner.json
-/ui
