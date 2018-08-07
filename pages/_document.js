@@ -1,18 +1,10 @@
 import React from 'react';
 import Document, { Head, Main, NextScript } from 'next/document';
-import { ServerStyleSheet, injectGlobal } from 'styled-components';
+import { ServerStyleSheet } from 'styled-components';
+import globalStyles from '../styles/global-styles';
 
-// eslint-disable-next-line no-unused-expressions
-injectGlobal`
-  html {
-    font-size: 16px;
-  }
-  body {
-    font-family: "Merriweather", serif;
-    font-size: 1.6em;
-    line-height: 1.6;
-  }
-`;
+// injectGlobalStyles
+globalStyles();
 
 export default class MyDocument extends Document {
   static getInitialProps({ renderPage }) {
@@ -23,26 +15,13 @@ export default class MyDocument extends Document {
   }
 
   render() {
+    const { styleTags } = this.props;
     return (
       <html>
         <Head>
           <title>My page</title>
           <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet" />
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" />
-          <style>{`
-            #__next {
-              height: 100vh;
-              min-height: 100vh;
-              background-image: url(${process.env.BACKEND_URL}/static/main-background.jpg);
-              background-size: 100% 100%;
-              background-repeat: no-repeat;
-            }
-            *,
-            *::before,
-            *::after {
-              box-sizing: border-box;
-            }
-          `}</style>
+          {styleTags}
         </Head>
         <body>
           <Main />

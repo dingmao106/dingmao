@@ -8,7 +8,7 @@
     "lint:js:all": "npm run lint:js -- .",
     "dev": "next",
     "export": "next export",
-    "deploy": "rm -rf node_modules/.cache && next build && next export && touch out/.nojekyll && git add out/ && git commit -m \"Deploy Next.js to gh-pages\" && git subtree push --prefix out origin gh-pages"
+    "deploy": "rm -rf node_modules/.cache && next build && next export && touch out/.nojekyll && git subtree push --prefix out origin gh-pages"
   },
   "author": "Jack",
   "license": "ISC",
@@ -16,7 +16,8 @@
     "next": "^6.0.3",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
-    "styled-components": "^3.4.0"
+    "styled-components": "^3.4.0",
+    "styled-normalize": "^8.0.0"
   },
   "devDependencies": {
     "@17media/eslint-config-17media": "^2.0.0",

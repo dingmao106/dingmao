@@ -2,9 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 
 const ContainerWrap = styled.div`
+  box-sizing: content-box;
   height: 100%;
-  width: 1280px;
-  padding: 0 3em;
+  max-width: 1200px;
+  padding: 0 5%;
   margin: 0 auto;
 `;
 
