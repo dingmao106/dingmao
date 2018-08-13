@@ -2,6 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 
 const ContainerWrap = styled.div`
+  display: flex;
+  flex-direction: column;
   box-sizing: content-box;
   height: 100%;
   max-width: 1200px;

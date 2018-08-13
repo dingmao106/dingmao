@@ -1,11 +1,12 @@
 import React from 'react';
 import Header from '../components/Header';
+import Container from '../components/Container';
 
 const Contact = () => (
-  <div>
+  <Container>
     <Header />
     <p>This is Contact.</p>
-  </div>
+  </Container>
 );
 
 export default Contact;

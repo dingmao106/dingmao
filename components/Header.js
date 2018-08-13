@@ -9,6 +9,7 @@ const HeaderWrap = styled.div`
   margin: 0 auto;
   background-color: #fff;
   height: 80px;
+  width: 100%;
 `;
 
 const Item = styled.a`
