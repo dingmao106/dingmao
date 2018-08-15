@@ -1,9 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
-import { withRouter } from 'next/router';
-import Link from 'next/link';
 
-const HeaderWrap = styled.div`
+const HeaderWrap = styled.header`
   display: flex;
   justify-content: space-between;
   margin: 0 auto;
@@ -12,7 +11,7 @@ const HeaderWrap = styled.div`
   width: 100%;
 `;
 
-const Item = styled.a`
+const ItemStyle = styled.a`
   display: inline-block;
   line-height: 80px;
   padding: 0 .8em;
@@ -33,6 +32,15 @@ const Item = styled.a`
     `)}
 `;
 
+const Item = ({ onSwitchPage, name = '', isActive, children }) => (
+  <ItemStyle
+    onClick={() => onSwitchPage(name)}
+    isActive={isActive}
+  >
+    {children}
+  </ItemStyle>
+);
+
 const Logo = styled.h1`
   font-family: 'Permanent Marker', cursive;
   margin: 0;
@@ -45,26 +53,23 @@ const LeftBody = styled.div`
 const RightBody = styled.div`
 `;
 
-const Header = ({ router }) => (
+const Header = ({ getIsActive, onSwitchPage }) => (
   <HeaderWrap>
     <LeftBody>
       <Logo>DING MAO</Logo>
     </LeftBody>
     <RightBody>
-      <Link href="/">
-        <Item isActive={router.pathname === '/'}>Home</Item>
-      </Link>
-      <Link href="/about">
-        <Item isActive={router.pathname === '/about'}>About</Item>
-      </Link>
-      <Link href="/collection">
-        <Item isActive={router.pathname === '/collection'}>Collection</Item>
-      </Link>
-      <Link href="/contact">
-        <Item isActive={router.pathname === '/contact'}>Contact</Item>
-      </Link>
+      <Item onSwitchPage={onSwitchPage} isActive={getIsActive()} >Home</Item>
+      <Item onSwitchPage={onSwitchPage} name="about" isActive={getIsActive('about')} >About</Item>
+      <Item onSwitchPage={onSwitchPage} name="collection" isActive={getIsActive('collection')}>Collection</Item>
+      <Item onSwitchPage={onSwitchPage} name="contact" isActive={getIsActive('contact')} >Contact</Item>
     </RightBody>
   </HeaderWrap>
 );
 
-export default withRouter(Header);
+Header.propTypes = {
+  getIsActive: PropTypes.func,
+  onSwitchPage: PropTypes.func,
+};
+
+export default Header;

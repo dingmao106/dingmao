@@ -9,13 +9,13 @@ const MainDescriptionWrap = styled.div`
 
 const Title = styled.div`
   margin-bottom: 15px;
-  font: bold 6.1538461538em/1 Poppins, sans-serif;
+  font: bold 6.1538461538em/1 "Poppins", "sans-serif";
   color: #fff;
 `;
 
 const SubTitle = styled.div`
   margin-bottom: 30px;
-  font-family: "Space Mono", monospace;
+  font-family: "Space Mono", "monospace";
   font-weight: bold;
   font-size: 1.2307692308em;
   color: #fff;

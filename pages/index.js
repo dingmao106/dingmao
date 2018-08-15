@@ -1,27 +1,9 @@
 import React from 'react';
-import Header from '../components/Header';
-import Container from '../components/Container';
-import Body from '../components/Body';
-import Card from '../components/Card';
-import MainDescription from '../components/MainDescription';
+import Main from '../components/Main';
+import Home from '../components/Home';
 
-const Home = () => (
-  <Container>
-    <Header />
-    <Body>
-      <Card img="fake_index_main.jpg">
-        <MainDescription />
-      </Card>
-      <Card>
-        <Card img="fake_index_main.jpg">
-          <div>456</div>
-        </Card>
-        <Card img="fake_index_main.jpg">
-          <div>789</div>
-        </Card>
-      </Card>
-    </Body>
-  </Container>
+export default () => (
+  <Main>
+    <Home />
+  </Main>
 );
-
-export default Home;

@@ -1,12 +1,9 @@
 import React from 'react';
-import Header from '../components/Header';
-import Container from '../components/Container';
+import Main from '../components/Main';
+import About from '../components/About';
 
-const About = () => (
-  <Container>
-    <Header />
-    <p>This is About.</p>
-  </Container>
+export default () => (
+  <Main>
+    <About />
+  </Main>
 );
-
-export default About;

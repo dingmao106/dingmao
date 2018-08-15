@@ -1,15 +1,9 @@
 import React from 'react';
-import Header from '../components/Header';
-import Container from '../components/Container';
-import Body from '../components/Body';
+import Main from '../components/Main';
+import Collection from '../components/Collection';
 
-const Collection = () => (
-  <Container>
-    <Header />
-    <Body>
-      <p>This is Collection.</p>
-    </Body>
-  </Container>
+export default () => (
+  <Main>
+    <Collection />
+  </Main>
 );
-
-export default Collection;

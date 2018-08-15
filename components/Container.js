@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const ContainerWrap = styled.div`
+const ContainerWrap = styled.main`
   display: flex;
   flex-direction: column;
   box-sizing: content-box;
