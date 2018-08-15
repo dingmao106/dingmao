@@ -3,13 +3,14 @@ import Header from '../components/Header';
 import Container from '../components/Container';
 import Body from '../components/Body';
 import Card from '../components/Card';
+import MainDescription from '../components/MainDescription';
 
 const Home = () => (
   <Container>
     <Header />
     <Body>
       <Card img="fake_index_main.jpg">
-        <div>123</div>
+        <MainDescription />
       </Card>
       <Card>
         <Card img="fake_index_main.jpg">
