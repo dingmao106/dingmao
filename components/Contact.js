@@ -1,10 +1,14 @@
 import React from 'react';
-import Body from '../components/Body';
+import styled from 'styled-components';
+
+const ContactWrap = styled.div`
+  position: absolute;
+`;
 
 const Contact = () => (
-  <Body>
+  <ContactWrap>
     <p>This is Contact.</p>
-  </Body>
+  </ContactWrap>
 );
 
 export default Contact;

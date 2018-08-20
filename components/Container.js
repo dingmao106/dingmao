@@ -9,6 +9,7 @@ const ContainerWrap = styled.main`
   max-width: 1200px;
   padding: 0 5%;
   margin: 0 auto;
+  perspective: 800px;
 `;
 
 const Container = ({ children }) => (

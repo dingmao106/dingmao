@@ -14,9 +14,8 @@ const HeaderWrap = styled.header`
 const ItemStyle = styled.a`
   display: inline-block;
   line-height: 80px;
-  padding: 0 .8em;
-  margin: 0 1em;
-  font-weight: 700;
+  padding: 0 1em;
+  font: bold 1.0769230769em/80px Poppins, sans-serif;
   color: black;
   cursor: pointer;
 
@@ -32,9 +31,9 @@ const ItemStyle = styled.a`
     `)}
 `;
 
-const Item = ({ onSwitchPage, name = '', isActive, children }) => (
+const Item = ({ onSwitchPage, isActive, children }) => (
   <ItemStyle
-    onClick={() => onSwitchPage(name)}
+    onClick={onSwitchPage}
     isActive={isActive}
   >
     {children}
@@ -53,23 +52,23 @@ const LeftBody = styled.div`
 const RightBody = styled.div`
 `;
 
-const Header = ({ getIsActive, onSwitchPage }) => (
+const Header = ({ onSwitchPage, currentPage }) => (
   <HeaderWrap>
     <LeftBody>
       <Logo>DING MAO</Logo>
     </LeftBody>
     <RightBody>
-      <Item onSwitchPage={onSwitchPage} isActive={getIsActive()} >Home</Item>
-      <Item onSwitchPage={onSwitchPage} name="about" isActive={getIsActive('about')} >About</Item>
-      <Item onSwitchPage={onSwitchPage} name="collection" isActive={getIsActive('collection')}>Collection</Item>
-      <Item onSwitchPage={onSwitchPage} name="contact" isActive={getIsActive('contact')} >Contact</Item>
+      <Item onSwitchPage={() => onSwitchPage('home')} isActive={currentPage === 'home'}>Home</Item>
+      <Item onSwitchPage={() => onSwitchPage('about')} isActive={currentPage === 'about'} name="about">About</Item>
+      <Item onSwitchPage={() => onSwitchPage('collection')} isActive={currentPage === 'collection'} name="collection">Collection</Item>
+      <Item onSwitchPage={() => onSwitchPage('contact')} isActive={currentPage === 'contact'} name="contact">Contact</Item>
     </RightBody>
   </HeaderWrap>
 );
 
 Header.propTypes = {
-  getIsActive: PropTypes.func,
   onSwitchPage: PropTypes.func,
+  currentPage: PropTypes.string,
 };
 
 export default Header;

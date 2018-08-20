@@ -1,10 +1,14 @@
 import React from 'react';
-import Body from '../components/Body';
+import styled from 'styled-components';
+
+const CollectionWrap = styled.div`
+  position: absolute;
+`;
 
 const Collection = () => (
-  <Body>
+  <CollectionWrap>
     <p>This is Collection.</p>
-  </Body>
+  </CollectionWrap>
 );
 
 export default Collection;
