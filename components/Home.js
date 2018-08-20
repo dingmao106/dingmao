@@ -7,17 +7,17 @@ import PageWrap from './PageWrap';
 
 const TopCard = styled(Card)`
   margin-top: 10px;
-  height: calc(60% - 30px);
+  height: calc(61% - 30px);
 `;
 
 const LeftBottomCard = styled(Card)`
   margin-top: 10px;
-  height: 40%;
+  height: 39%;
 `;
 
 const RightBottomCard = styled(Card)`
   margin-top: 10px;
-  height: 40%;
+  height: 39%;
 `;
 
 const CardsWrap = styled.div`
