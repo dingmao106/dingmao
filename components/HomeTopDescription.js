@@ -1,8 +1,8 @@
 import React from 'react';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import SocialService from './SocialService';
 
-const MainDescriptionWrap = styled.div`
+const HomeTopDescriptionWrap = styled.div`
   width: 100%;
   text-align: center;
 `;
@@ -21,12 +21,12 @@ const SubTitle = styled.div`
   color: #fff;
 `;
 
-const MainDescription = () => (
-  <MainDescriptionWrap>
+const HomeTopDescription = () => (
+  <HomeTopDescriptionWrap>
     <Title>Ding Mao</Title>
     <SubTitle>Graphic Designer & Model</SubTitle>
     <SocialService />
-  </MainDescriptionWrap>
+  </HomeTopDescriptionWrap>
 );
 
-export default MainDescription;
+export default HomeTopDescription;

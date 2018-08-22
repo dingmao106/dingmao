@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Card from './Card';
 import PageWrap from './PageWrap';
+import AboutTopContent from './AboutTopContent';
 
 const TopCard = styled(Card)`
   margin-top: 10px;
@@ -17,14 +18,13 @@ const BottomCard = styled(Card)`
 const About = ({ flipIn, flipOut, isActive }) => (
   <PageWrap isActive={isActive}>
     <TopCard
-      img="fake_index_main.jpg"
       isActive={isActive}
       isFlipIn={flipIn}
       isFlipOut={flipOut}
       flipInDelayTime={0}
       flipOutDelayTime={0}
     >
-      This is About. 1
+      <AboutTopContent />
     </TopCard>
     <BottomCard
       img="fake_index_main.jpg"

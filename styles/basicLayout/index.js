@@ -11,7 +11,7 @@ const stickyVerticalLayout = injectGlobal`
     font-size: 16px;
     height: 100%;
     width: 100%;
-    background-image: url(${process.env.BACKEND_URL}/static/main-background.jpg);
+    background-image: url(${process.env.BACKEND_URL}/static/main-background.png);
     background-size: 100% 100%;
     background-repeat: no-repeat;
   }

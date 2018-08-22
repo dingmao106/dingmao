@@ -22,6 +22,7 @@ const flipIn = keyframes`
 `;
 
 const CardWrap = styled.div`
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;

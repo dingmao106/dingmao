@@ -2,8 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Card from './Card';
-import MainDescription from './MainDescription';
+import MainDescription from './HomeTopDescription';
 import PageWrap from './PageWrap';
+import MiddleBar from './MiddleBar';
 
 const TopCard = styled(Card)`
   margin-top: 10px;
@@ -48,7 +49,10 @@ const Home = ({ flipIn, flipOut, isActive }) => (
         flipInDelayTime={0}
         flipOutDelayTime={150}
       >
-        <div>456</div>
+        <MiddleBar
+          page="collection"
+          text="Works 觀看作品"
+        />
       </LeftBottomCard>
       <RightBottomCard
         img="fake_index_main.jpg"
@@ -58,7 +62,10 @@ const Home = ({ flipIn, flipOut, isActive }) => (
         flipInDelayTime={150}
         flipOutDelayTime={200}
       >
-        <div>789</div>
+        <MiddleBar
+          page="contact"
+          text="Contact 聯繫我"
+        />
       </RightBottomCard>
     </CardsWrap>
   </PageWrap>
