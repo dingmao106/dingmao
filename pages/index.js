@@ -42,7 +42,7 @@ class Index extends React.Component {
         currentPage: lastState.to,
       }));
       window.history.pushState(null, null, `${process.env.BACKEND_URL}/${to}`);
-    }, 50);
+    }, 100);
   }
 
   render() {

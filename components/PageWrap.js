@@ -6,11 +6,9 @@ const PageWrap = styled.div`
   right: 0;
   left: 0;
   bottom: 0;
-  opacity: 0;
 
   ${props => props.isActive && css`
     z-index: 10;
-    opacity: 1;
   `}
 `;
 

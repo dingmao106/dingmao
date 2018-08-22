@@ -16,10 +16,24 @@ const BottomCard = styled(Card)`
 
 const About = ({ flipIn, flipOut, isActive }) => (
   <PageWrap isActive={isActive}>
-    <TopCard img="fake_index_main.jpg" isFlipIn={flipIn} isFlipOut={flipOut}>
+    <TopCard
+      img="fake_index_main.jpg"
+      isActive={isActive}
+      isFlipIn={flipIn}
+      isFlipOut={flipOut}
+      flipInDelayTime={0}
+      flipOutDelayTime={0}
+    >
       This is About. 1
     </TopCard>
-    <BottomCard img="fake_index_main.jpg" isFlipIn={flipIn} isFlipOut={flipOut}>
+    <BottomCard
+      img="fake_index_main.jpg"
+      isActive={isActive}
+      isFlipIn={flipIn}
+      isFlipOut={flipOut}
+      flipInDelayTime={200}
+      flipOutDelayTime={150}
+    >
       This is About. 2
     </BottomCard>
   </PageWrap>
