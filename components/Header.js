@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
 
 const HeaderWrap = styled.header`
+  position: relative;
+  z-index: 20;
   display: flex;
   justify-content: space-between;
   margin: 0 auto;
