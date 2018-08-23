@@ -35,8 +35,8 @@ const Home = ({ flipIn, flipOut, isActive }) => (
       isActive={isActive}
       isFlipIn={flipIn}
       isFlipOut={flipOut}
-      flipInDelayTime={0}
-      flipOutDelayTime={0}
+      inDelayTime={0}
+      outDelayTime={0}
     >
       <MainDescription />
     </TopCard>
@@ -46,8 +46,8 @@ const Home = ({ flipIn, flipOut, isActive }) => (
         isActive={isActive}
         isFlipIn={flipIn}
         isFlipOut={flipOut}
-        flipInDelayTime={0}
-        flipOutDelayTime={150}
+        inDelayTime={0}
+        outDelayTime={150}
       >
         <MiddleBar
           page="collection"
@@ -59,8 +59,8 @@ const Home = ({ flipIn, flipOut, isActive }) => (
         isActive={isActive}
         isFlipIn={flipIn}
         isFlipOut={flipOut}
-        flipInDelayTime={150}
-        flipOutDelayTime={200}
+        inDelayTime={150}
+        outDelayTime={200}
       >
         <MiddleBar
           page="contact"

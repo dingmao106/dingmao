@@ -17,12 +17,12 @@ function delayUpdating(Component) {
       if (prevProps.isActive && !this.props.isActive) {
         setTimeout(
           () => this.setState({ isActive: false }),
-          this.props.outDelayTime || 0
+          this.props.outDelayTime
         );
       } else if (!prevProps.isActive && this.props.isActive) {
         setTimeout(
           () => this.setState({ isActive: true }),
-          this.props.inDelayTime || 0
+          this.props.inDelayTime
         );
       }
     }

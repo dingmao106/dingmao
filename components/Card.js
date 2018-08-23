@@ -76,12 +76,12 @@ const CardWrap = styled.div`
   ${props => props.flipIn && css`
     backface-visibility: hidden;
     animation: ${flipIn} 1s cubic-bezier(0.175, 0.885, 0.12, 1.175);
-    animation-delay: ${`${props.flipInDelayTime}ms`};
+    animation-delay: ${`${props.inDelayTime}ms`};
   `}
 
   ${props => props.flipOut && css`
     animation: ${flipOut} 1s cubic-bezier(0.175, 0.885, 0.12, 1.175);
-    animation-delay: ${`${props.flipOutDelayTime}ms`};
+    animation-delay: ${`${props.outDelayTime}ms`};
   `}
 
   ${props => (props.isActive ? css`
@@ -99,8 +99,8 @@ const Card = ({
   className,
   isFlipIn,
   isFlipOut,
-  flipInDelayTime = 0,
-  flipOutDelayTime = 0,
+  inDelayTime = 0,
+  outDelayTime = 0,
   titleInDelayTime = 0,
   isActive,
 }) => (
@@ -110,8 +110,8 @@ const Card = ({
     img={img}
     flipIn={isFlipIn}
     flipOut={isFlipOut}
-    inDelayTime={flipInDelayTime}
-    outDelayTime={flipOutDelayTime}
+    inDelayTime={inDelayTime}
+    outDelayTime={outDelayTime}
   >
     <Header isActive={isActive} inDelayTime={titleInDelayTime}>
       {title}
@@ -126,8 +126,8 @@ Card.propTypes = {
   title: PropTypes.string,
   isFlipIn: PropTypes.bool,
   isFlipOut: PropTypes.bool,
-  flipInDelayTime: PropTypes.number,
-  flipOutDelayTime: PropTypes.number,
+  inDelayTime: PropTypes.number,
+  outDelayTime: PropTypes.number,
   titleInDelayTime: PropTypes.number,
   isActive: PropTypes.bool,
 };

@@ -23,8 +23,8 @@ const About = ({ flipIn, flipOut, isActive }) => (
       isActive={isActive}
       isFlipIn={flipIn}
       isFlipOut={flipOut}
-      flipInDelayTime={0}
-      flipOutDelayTime={0}
+      inDelayTime={0}
+      outDelayTime={0}
     >
       <AboutTopContent />
     </TopCard>
@@ -33,8 +33,8 @@ const About = ({ flipIn, flipOut, isActive }) => (
       isActive={isActive}
       isFlipIn={flipIn}
       isFlipOut={flipOut}
-      flipInDelayTime={200}
-      flipOutDelayTime={150}
+      inDelayTime={200}
+      outDelayTime={150}
     >
       This is About. 2
     </BottomCard>

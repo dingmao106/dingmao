@@ -62,7 +62,7 @@ const Item = ({ onSwitchPage, isActive, children }) => (
 Item.propTypes = {
   isActive: PropTypes.bool,
   onSwitchPage: PropTypes.func,
-}
+};
 
 const Logo = styled.h1`
   font-family: 'Permanent Marker', cursive;
