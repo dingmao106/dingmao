@@ -18,6 +18,8 @@ const BottomCard = styled(Card)`
 const About = ({ flipIn, flipOut, isActive }) => (
   <PageWrap isActive={isActive}>
     <TopCard
+      title="About Ding Mao"
+      titleInDelayTime={500}
       isActive={isActive}
       isFlipIn={flipIn}
       isFlipOut={flipOut}

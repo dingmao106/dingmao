@@ -21,6 +21,32 @@ const flipIn = keyframes`
   }
 `;
 
+const Header = delayUpdating(styled.h2`
+  position: absolute;
+  padding: 15px 0 0;
+  top: 70px;
+  transform-origin: 0 0;
+  transform: rotate(-90deg) translateX(-100%);
+  z-index: 10;
+  transition-delay: 0.6s;
+  transition: 0.3s;
+
+  &:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    border-bottom: 10px solid;
+  }
+
+  ${props => (props.isActive ? css`
+      left: 0;
+  ` : css `
+      left: -40px;
+  `)}
+`);
+
 const CardWrap = styled.div`
   position: relative;
   display: flex;
@@ -30,6 +56,7 @@ const CardWrap = styled.div`
   width: 100%;
   height: 100%;
   opacity: 0;
+  overflow: hidden;
 
   background-repeat: no-repeat;
   background-position: 50% 50%;
@@ -68,11 +95,13 @@ const CardWrap = styled.div`
 const Card = ({
   children,
   img,
+  title,
   className,
   isFlipIn,
   isFlipOut,
   flipInDelayTime = 0,
   flipOutDelayTime = 0,
+  titleInDelayTime = 0,
   isActive,
 }) => (
   <CardWrap
@@ -81,9 +110,12 @@ const Card = ({
     img={img}
     flipIn={isFlipIn}
     flipOut={isFlipOut}
-    flipInDelayTime={flipInDelayTime}
-    flipOutDelayTime={flipOutDelayTime}
+    inDelayTime={flipInDelayTime}
+    outDelayTime={flipOutDelayTime}
   >
+    <Header isActive={isActive} inDelayTime={titleInDelayTime}>
+      {title}
+    </Header>
     {children}
   </CardWrap>
 );
@@ -91,10 +123,12 @@ const Card = ({
 Card.propTypes = {
   img: PropTypes.string,
   className: PropTypes.string,
+  title: PropTypes.string,
   isFlipIn: PropTypes.bool,
   isFlipOut: PropTypes.bool,
   flipInDelayTime: PropTypes.number,
   flipOutDelayTime: PropTypes.number,
+  titleInDelayTime: PropTypes.number,
   isActive: PropTypes.bool,
 };
 

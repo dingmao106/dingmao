@@ -20,7 +20,7 @@ export default class MyDocument extends Document {
       <html>
         <Head>
           <title>My page</title>
-          <link href="https://fonts.googleapis.com/css?family=Permanent|Marker|Poppins" rel="stylesheet" />
+          <link href="https://fonts.googleapis.com/css?family=Permanent+Marker%7CSpace+Mono:400,400i,700,700i%7CPoppins:400,700%7CReenie+Beanie" rel="stylesheet"></link>
           {styleTags}
         </Head>
         <body>

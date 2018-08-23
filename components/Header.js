@@ -11,17 +11,35 @@ const HeaderWrap = styled.header`
   width: 100%;
 `;
 
+const Bg = styled.div`
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  background-color: black;
+  transition: 0.3s;
+  ${({ isActive }) => isActive && css`
+    height: 100%;
+  `}
+`;
+
 const ItemStyle = styled.a`
+  position: relative;
+  padding: 0 1em;
   display: inline-block;
   line-height: 80px;
-  padding: 0 1em;
   font: bold 1.0769230769em/80px Poppins, sans-serif;
   color: black;
   cursor: pointer;
 
+  > span {
+    position: relative;
+    z-index: 2;
+  }
+
   ${({ isActive }) => (isActive ?
     css`
-      background-color: black;
       color: #fff;
     ` :
     css`
@@ -36,9 +54,15 @@ const Item = ({ onSwitchPage, isActive, children }) => (
     onClick={onSwitchPage}
     isActive={isActive}
   >
-    {children}
+    <span>{children}</span>
+    <Bg isActive={isActive} />
   </ItemStyle>
 );
+
+Item.propTypes = {
+  isActive: PropTypes.bool,
+  onSwitchPage: PropTypes.func,
+}
 
 const Logo = styled.h1`
   font-family: 'Permanent Marker', cursive;
