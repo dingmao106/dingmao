@@ -13,6 +13,7 @@
   "author": "Jack",
   "license": "ISC",
   "dependencies": {
+    "lodash": "^4.17.10",
     "next": "^6.0.3",
     "prop-types": "^15.6.2",
     "react": "^16.4.0",
