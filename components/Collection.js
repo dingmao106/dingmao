@@ -7,8 +7,8 @@ import PageWrap from './PageWrap';
 import RawScrollbar from './Scrollbar';
 
 const Scrollbar = styled(RawScrollbar)`
-  top: ${({ top }) => `${top < 0 ? 0 : top}px;`}
-  height: 50px;
+  top: ${({ top }) => `${top < 0 ? 0 : top}px`};
+  height: 100px;
 `;
 
 const Card = styled(RawCard)`
@@ -46,6 +46,9 @@ const Filter = styled.div`
   cursor: pointer;
   transition: 0.3s;
   letter-spacing: 3px;
+  ${props => props.isActive && css`
+    color: #3767C7;
+  `}
 `;
 
 const Item = styled.img`
@@ -122,6 +125,7 @@ class Collection extends React.Component {
     this.setState({
       filter: name,
       renderedItems: this.getImagesByFilter(name),
+      scrollTopPos: 0,
     });
   }
 
@@ -134,14 +138,14 @@ class Collection extends React.Component {
     }
     window.requestAnimationFrame(() => {
       const scrollTopPos = this.scrollLength - (target.bottom - parent.bottom);
-      const ratio = this.scrollLength / (parent.height - 50);
+      const ratio = this.scrollLength / (parent.height - 100);
       this.setState({ scrollTopPos: scrollTopPos / ratio });
     });
   }
 
   render() {
     const { flipIn, flipOut, isActive } = this.props;
-    const { allItems, renderedItems, scrollTopPos } = this.state;
+    const { allItems, renderedItems, scrollTopPos, filter } = this.state;
     return (
       <PageWrap isActive={isActive}>
         <Card
@@ -156,7 +160,7 @@ class Collection extends React.Component {
           <Content innerRef={this.scrollArea}>
             <Header>
               {this.filters.map((f, idx) =>
-                <Filter key={idx} onClick={() => this.handelSwitchFilter(f)}>{`${f.toLocaleUpperCase()}`}</Filter>
+                <Filter key={idx} isActive={filter === f} onClick={() => this.handelSwitchFilter(f)}>{`${f.toLocaleUpperCase()}`}</Filter>
               )}
             </Header>
             <Body>
