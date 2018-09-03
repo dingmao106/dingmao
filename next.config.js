@@ -1,5 +1,7 @@
+const withImages = require('next-images');
+
 /* eslint-disable */
-module.exports = {
+module.exports = withImages({
   // some configuration
   exportPathMap: function () { // /Next-React-Components
     return {
@@ -11,4 +13,4 @@ module.exports = {
     }
   },
   assetPrefix: process.env.NODE_ENV === 'production' ? 'https://dingmao106.github.io/dingmao' : '',
-}
+});

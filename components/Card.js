@@ -132,4 +132,4 @@ Card.propTypes = {
   isActive: PropTypes.bool,
 };
 
-export default delayUpdating(styled(Card)``);
+export default styled(delayUpdating(Card))``;

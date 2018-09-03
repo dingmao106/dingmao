@@ -205,8 +205,8 @@ class SlideShow extends React.Component {
           onClick={() => this.handleSwitchItem('next')}
         />
         <DotWrap>
-          {items.map(item => (
-            <Dot isActive={item.title === renderItems[currentIndex].title} />
+          {items.map((item, idx) => (
+            <Dot key={idx} isActive={item.title === renderItems[currentIndex].title} />
           ))}
         </DotWrap>
       </SlideShowWrap>
