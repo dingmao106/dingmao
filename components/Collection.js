@@ -8,7 +8,12 @@ import RawScrollbar from './Scrollbar';
 
 const Scrollbar = styled(RawScrollbar)`
   top: ${({ top }) => `${top < 0 ? 0 : top}px`};
-  height: 100px;
+  height: 0px;
+  min-height: 0;
+  ${props => props.height && css`
+    height: ${props.height}px;
+    max-height: ${props.height}px;
+  `}
 `;
 
 const Card = styled(RawCard)`
@@ -97,6 +102,7 @@ class Collection extends React.Component {
       allItems: [],
       renderedItems: [],
       scrollTopPos: 0,
+      scrollBarLength: 0,
     };
   }
 
@@ -113,6 +119,21 @@ class Collection extends React.Component {
     }, 0);
   }
 
+  componentDidUpdate(prevProps, prevState) {
+    const { scrollBarLength, filter } = this.state;
+    const shouldChangeBarLength = prevState.filter !== filter;
+    if ((!scrollBarLength && !this.init && this.scrollArea.current) || shouldChangeBarLength) {
+      const parent = this.scrollArea.current.getBoundingClientRect();
+      const target = this.lastItem.current.getBoundingClientRect();
+      this.scrollLength = target.bottom - parent.bottom;
+      if (this.scrollLength > 5 && (parent.height / this.scrollLength) < 1) {
+        this.setState({ scrollBarLength: (parent.height - 70) * (parent.height / this.scrollLength) });
+      } else if (this.scrollLength > 5) {
+        this.setState({ scrollBarLength: (parent.height - this.scrollLength) });
+      }
+    }
+  }
+
   getImagesByFilter = filter => (
     Object.keys(this.images)
       .filter(name => name.includes(filter))
@@ -126,26 +147,27 @@ class Collection extends React.Component {
       filter: name,
       renderedItems: this.getImagesByFilter(name),
       scrollTopPos: 0,
+      scrollBarLength: 0,
     });
   }
 
   handleScroll = () => {
+    const { scrollBarLength } = this.state;
     const parent = this.scrollArea.current.getBoundingClientRect();
     const target = this.lastItem.current.getBoundingClientRect();
     if (!this.init) {
-      this.scrollLength = target.bottom - parent.bottom;
       this.init = true;
     }
     window.requestAnimationFrame(() => {
       const scrollTopPos = this.scrollLength - (target.bottom - parent.bottom);
-      const ratio = this.scrollLength / (parent.height - 100);
+      const ratio = this.scrollLength / (parent.height - scrollBarLength);
       this.setState({ scrollTopPos: scrollTopPos / ratio });
     });
   }
 
   render() {
     const { flipIn, flipOut, isActive } = this.props;
-    const { allItems, renderedItems, scrollTopPos, filter } = this.state;
+    const { allItems, renderedItems, scrollTopPos, filter, scrollBarLength } = this.state;
     return (
       <PageWrap isActive={isActive}>
         <Card
@@ -177,7 +199,7 @@ class Collection extends React.Component {
               })}
             </Body>
           </Content>
-          <Scrollbar top={scrollTopPos} />
+          <Scrollbar top={scrollTopPos} height={scrollBarLength} />
         </Card>
       </PageWrap>
     );
